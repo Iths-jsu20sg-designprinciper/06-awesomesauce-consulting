@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Start from './components/start/Start'
 
 function App() {
 	return (
@@ -12,7 +13,9 @@ function App() {
 					<button> Contact us </button>
 				</nav>
 			</header>
-			<main> main </main>
+			<main>
+				<Start />
+			</main>
 			<footer> footer </footer>
 		</div>
 	);
