@@ -3,6 +3,7 @@ import { mount } from 'enzyme';
 import App from './App';
 import Start from './components/start/Start'
 import Vision from './components/vision/Vision'
+import Contact from './components/contact/Contact'
 
 describe('App component', () => {
 	it('renders without errors', () => {
@@ -24,5 +25,23 @@ describe('App component (integration)', () => {
 		btn.simulate('click')
 
 		expect( wrapper.contains(<Vision />) ).toBe(true)
+	})
+	it('renders Contact component after menu click', () => {
+		const wrapper = mount(<App />)
+		const btn = wrapper.find('[data-test="contact-button"]')
+
+		btn.simulate('click')
+
+		expect( wrapper.contains(<Contact />) ).toBe(true)
+	})
+	it('renders Start component after several clicks', () => {
+		const wrapper = mount(<App />)
+		const contactBtn = wrapper.find('[data-test="contact-button"]')
+		const startBtn = wrapper.find('[data-test="start-button"]')
+
+		contactBtn.simulate('click')
+		startBtn.simulate('click')
+
+		expect( wrapper.contains(<Start />) ).toBe(true)
 	})
 })
