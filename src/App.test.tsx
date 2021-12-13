@@ -11,7 +11,7 @@ describe('App component', () => {
 	});
 })
 
-describe('App component (integration)', () => {
+describe('App component (integration, navigation menu)', () => {
 	it('renders Start initially', () => {
 		const wrapper = mount(<App />)
 		const actual = wrapper.contains(<Start/>)
